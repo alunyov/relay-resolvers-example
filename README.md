@@ -45,15 +45,19 @@ This example models the full schema for a simple Todo App using a combination of
 
 Live Resolvers are connected to a simplified version of the “flux”-like store, where we can read the state of the store, and we can subscribe to the changes of the store.
 
+https://github.com/alunyov/relay-resolvers-example/blob/4335fe9d3e22b7f31e3a57bfa9c0211025422eda/src/resolvers/Todo.ts#L4-L18
+
 The same code is run both on the server and the client. The client store contains the Map of `Todo` items, we can add, remove, and toggle the state of the `Todo` item by “dispatching” store actions. These actions are executed as side-effects in the resolvers that defined on the `Mutation` type.
 
 The initial state of the store is fetched from the “database” and passed to the client as the `storeSnapshot` - this ensures that the output of the Server Rendering is matching the client output.
 
 The server resolvers are using “server” implementation of the Store’s reducer: it process the actions by writing/deleting data to the “database”,
 
-In this example we’re “abusing” the fact that we can run these resolvers and the server with different implementations, and using them to perform mutations. Local mutations are sending actions to update the store, where the same mutation on the server a sending requests to the remote API that performs “databases” writes.
+In this example we’re “abusing” the fact that we can run these resolvers and the server with different implementations, and using them to perform mutations. Local mutations are sending actions to update the store, where the same mutation on the server, when read, is sending a request to the "database".
 
-But, for the “server” API we don’t have a good way of “waiting” for the execution of the resolver, as all resolver’s reads/executed are synchronously. So in the current example, we just “reading” (environment.lookup) the mutations on the server, without waiting for the “database” response.
+For this “server” API we don’t have a good way of “waiting” for the execution of the resolver, as all resolver’s reads/executed are synchronously. So in the current example, we just “reading” (`environment.lookup(...)`) the mutations on the server, without waiting for the “database” response.
+
+https://github.com/alunyov/relay-resolvers-example/blob/4335fe9d3e22b7f31e3a57bfa9c0211025422eda/pages/api/hack-do-not-use.ts#L17-L35
 
 ## Getting Started with this Example
 
