@@ -1,0 +1,11 @@
+type Query {
+  node(id: ID!): Node
+}
+
+type Mutation {
+  ping: Boolean @deprecated(reason: "This is not a real mutation field.")
+}
+
+interface Node {
+  id: ID!
+}

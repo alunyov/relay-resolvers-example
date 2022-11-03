@@ -1,0 +1,65 @@
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+}
+
+.noItems {
+  width: 50vw;
+  padding: 0.5rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.todo {
+  width: 50vw;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.todo .label {
+  flex: 1;
+}
+
+.todo .label.completed {
+  text-decoration: line-through;
+}
+
+.delete {
+  font-size: 0.8rem;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 50vw;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  background: #efefef;
+  padding: 2rem;
+}
+
+.form .row {
+  flex: 1;
+}
+
+.form input[type="text"] {
+  margin-top: 0.3rem;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.2rem;
+}
+
+.form button {
+  font-size: 1rem;
+}
