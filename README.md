@@ -52,10 +52,8 @@ The initial state of the store is fetched from the “database” and passed to 
 The server resolvers are using “server” implementation of the Store’s reducer: it process the actions by writing/deleting data to the “database”,
 
 In this example we’re “abusing” the fact that we can run these resolvers and the server with different implementations, and using them to perform mutations. Local mutations are sending actions to update the store, where the same mutation on the server a sending requests to the remote API that performs “databases” writes.
-[Image: Screen Shot 2022-11-03 at 9.59.17 AM.png]
-But, for the “server” API we don’t have a good way of “waiting” for the execution of the resolver, as all resolver’s reads/executed are synchronously. So in the current example, we just “reading” (environment.lookup) the mutations on the server, without waiting for the “database” response.
 
----
+But, for the “server” API we don’t have a good way of “waiting” for the execution of the resolver, as all resolver’s reads/executed are synchronously. So in the current example, we just “reading” (environment.lookup) the mutations on the server, without waiting for the “database” response.
 
 ## Getting Started with this Example
 
@@ -65,7 +63,7 @@ First, run the development server:
 yarn dev
 ```
 
-Open _[http://localhost:3000](http://localhost:3000/)_ with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000/) with your browser to see the result.
 
 You can start looking/editing components in the `src/components`. Relay Resolvers are defined in `src/resolvers`.
 
