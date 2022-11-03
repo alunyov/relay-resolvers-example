@@ -13,7 +13,7 @@ import { LiveResolverStore } from "relay-runtime/experimental";
 RelayFeatureFlags.ENABLE_RELAY_RESOLVERS = true;
 RelayFeatureFlags.ENABLE_CLIENT_EDGES = true;
 
-const HTTP_ENDPOINT = "/api";
+const HTTP_ENDPOINT = "/api/hack-do-not-use";
 
 const fetchFn: FetchFunction = async (request, variables) => {
   const resp = await fetch(HTTP_ENDPOINT, {

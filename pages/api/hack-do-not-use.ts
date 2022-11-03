@@ -7,6 +7,9 @@ type Data = {
   data: { [key: string]: unknown };
 };
 
+// DO NOT USE THIS IN PRODUCTION.
+// This is just an experimental way of running some of the
+// relay resolvers on the server.
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
