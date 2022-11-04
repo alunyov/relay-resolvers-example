@@ -9,6 +9,7 @@ const nextConfig = {
       artifactDirectory: "__generated__",
     },
   },
+  experimental: { appDir: true },
 };
 
 module.exports = nextConfig;
