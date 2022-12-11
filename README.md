@@ -27,7 +27,7 @@ interface LiveState<T> {
 * @RelayResolver MyType.my_live_field: String
 * @live
 */
-function my_live_field(...): LiveState<string> {
+function my_live_field(): LiveState<string> {
    return {
       read() {
          return readFromStore(store, 'my_field')
